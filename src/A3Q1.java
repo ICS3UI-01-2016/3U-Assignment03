@@ -33,7 +33,7 @@ public class A3Q1 {
                 rem.move();
                 
             } 
-            
+            // || means or/and
             if(rem.canPickThing() || !rem.frontIsClear()){
                 break;
             }
