@@ -20,6 +20,25 @@ public class A3Q3 {
      */
     public static void main(String[] args) {
         City af = new City();
+        Robot rem = new Robot(af,1,2,Direction.EAST);
         
+        
+        new Wall(af, 0, 0, Direction.NORTH);
+        new Wall(af, 0, 0, Direction.WEST);
+        new Wall(af, 1, 0, Direction.WEST);
+        new Wall(af, 2, 0, Direction.WEST);
+        new Wall(af, 2, 0, Direction.SOUTH);
+        new Wall(af, 2, 1, Direction.SOUTH);
+        new Wall(af, 2, 2, Direction.SOUTH);
+        new Wall(af, 2, 4, Direction.SOUTH);
+        new Wall(af, 2, 4, Direction.EAST);
+        new Wall(af, 1, 4, Direction.EAST);
+        new Wall(af, 0, 4, Direction.EAST);
+        new Wall(af, 0, 1, Direction.NORTH);
+        new Wall(af, 0, 2, Direction.NORTH);
+        new Wall(af, 0, 3, Direction.NORTH);
+        new Wall(af, 0, 4, Direction.NORTH);
+        
+        // get direction or if front is Clear and break
     }
 }
