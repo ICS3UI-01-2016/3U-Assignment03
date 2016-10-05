@@ -64,6 +64,7 @@ public class A3Q6 {
         new Wall(af,5,5,Direction.EAST);
         new Wall(af,5,5,Direction.SOUTH);
         
+        // make rem go around the squares
         int outside = 0;
         while (outside < 4){
             
@@ -75,8 +76,10 @@ public class A3Q6 {
                 if (count < 3){
                     rem.turnLeft();
                 }
+                // make rem stop and move to every other square
                 count = count + 1;
             }
+            // make rem to turn left on every other square 
             outside = outside + 1;
             }
             
