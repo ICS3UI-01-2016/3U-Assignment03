@@ -9,7 +9,6 @@ import becker.robots.Wall;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author baayl
@@ -23,8 +22,8 @@ public class A3Q4 {
         // create a City
         City af = new City();
         // create a Robot
-        Robot rem = new Robot(af,0,2,Direction.WEST);
-        
+        Robot rem = new Robot(af, 0, 2, Direction.WEST);
+
         new Wall(af, 1, 1, Direction.NORTH);
         new Wall(af, 1, 1, Direction.WEST);
         new Wall(af, 2, 1, Direction.SOUTH);
@@ -33,10 +32,10 @@ public class A3Q4 {
         new Wall(af, 2, 2, Direction.EAST);
         new Wall(af, 1, 2, Direction.EAST);
         new Wall(af, 1, 2, Direction.NORTH);
-        
+
         // make rem go around the square 2 times 
         int count = 0;
-        while(count < 8){
+        while (count < 8) {
             rem.move();
             rem.move();
             rem.turnLeft();
@@ -45,5 +44,4 @@ public class A3Q4 {
         }
 
     }
-    
 }

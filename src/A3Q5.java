@@ -1,3 +1,4 @@
+
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
@@ -21,22 +22,22 @@ public class A3Q5 {
         // create a City
         City af = new City();
         // create a Robot
-        Robot rem = new Robot(af,1,1,Direction.EAST);
-        
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        new Thing(af,1,1);
-        
+        Robot rem = new Robot(af, 1, 1, Direction.EAST);
+
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+        new Thing(af, 1, 1);
+
         // make rem pick thing and move it to (1,2) and loop 10 times
         int count = 0;
-        while(count < 10){
+        while (count < 10) {
             rem.pickThing();
             rem.move();
             rem.putThing();
@@ -50,5 +51,4 @@ public class A3Q5 {
         // make rem move to be on top of Thing
         rem.move();
     }
-    
 }

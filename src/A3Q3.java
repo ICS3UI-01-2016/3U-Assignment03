@@ -8,7 +8,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author baayl3669
@@ -22,8 +21,8 @@ public class A3Q3 {
         // create a City 
         City af = new City();
         // create a Robot
-        Robot rem = new Robot(af,1,2,Direction.EAST);
-        
+        Robot rem = new Robot(af, 1, 2, Direction.EAST);
+
         // make the rectangular room
         new Wall(af, 0, 0, Direction.NORTH);
         new Wall(af, 0, 0, Direction.WEST);
@@ -40,34 +39,34 @@ public class A3Q3 {
         new Wall(af, 0, 2, Direction.NORTH);
         new Wall(af, 0, 3, Direction.NORTH);
         new Wall(af, 0, 4, Direction.NORTH);
-        
+
         // make rem move to the side of the room
-        while(rem.frontIsClear()){
+        while (rem.frontIsClear()) {
             rem.move();
         }
-        if(!rem.frontIsClear()){
+        if (!rem.frontIsClear()) {
             rem.turnLeft();
             rem.move();
             rem.turnLeft();
             rem.turnLeft();
             rem.turnLeft();
         }
-        
+
         // make rem find his way out of the rectangular room
-        while(!rem.frontIsClear()){
+        while (!rem.frontIsClear()) {
             rem.turnLeft();
-            if(rem.frontIsClear()){
+            if (rem.frontIsClear()) {
                 rem.move();
                 rem.turnLeft();
                 rem.turnLeft();
                 rem.turnLeft();
             }
             // get rem out of the room
-            if(rem.frontIsClear()){
+            if (rem.frontIsClear()) {
                 rem.move();
             }
         }
-        
-        
+
+
     }
 }
