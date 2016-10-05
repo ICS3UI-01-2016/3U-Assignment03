@@ -20,9 +20,9 @@ public class A3Q4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // create a city
+        // create a City
         City af = new City();
-        // create a robot
+        // create a Robot
         Robot rem = new Robot(af,0,2,Direction.WEST);
         
         new Wall(af, 1, 1, Direction.NORTH);
