@@ -22,7 +22,7 @@ public class A3Q6 {
         // create city
         City af = new City();
         // create Robot
-        Robot rem = new Robot(af,3,3,Direction.NORTH);
+        Robot rem = new Robot(af,3,3,Direction.SOUTH);
         
         // create square 1 
         new Wall(af,1,1,Direction.WEST);
@@ -63,6 +63,24 @@ public class A3Q6 {
         new Wall(af,5,4,Direction.SOUTH);
         new Wall(af,5,5,Direction.EAST);
         new Wall(af,5,5,Direction.SOUTH);
+        
+        int outside = 0;
+        while (outside < 4){
+            
+            int count = 0;
+            while (count < 4){
+                rem.move();
+                rem.move();
+                rem.move();
+                if (count < 3){
+                    rem.turnLeft();
+                }
+                count = count + 1;
+            }
+            outside = outside + 1;
+            }
+            
+        }
     }
     
-}
+
