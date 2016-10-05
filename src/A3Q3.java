@@ -19,7 +19,9 @@ public class A3Q3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // create a city 
         City af = new City();
+        // create a city
         Robot rem = new Robot(af,1,2,Direction.EAST);
         
         // make the rectangular room
