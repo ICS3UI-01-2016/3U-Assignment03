@@ -76,10 +76,10 @@ public class A3Q6 {
                 if (count < 3){
                     rem.turnLeft();
                 }
-                // make rem stop and move to every other square
+                // make rem stop between the squares (3,3) and move to every other square
                 count = count + 1;
             }
-            // make rem to turn left on every other square 
+            // make rem to turn left on every other side of the square 
             outside = outside + 1;
             }
             
