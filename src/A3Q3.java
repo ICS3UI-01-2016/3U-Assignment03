@@ -22,7 +22,7 @@ public class A3Q3 {
         City af = new City();
         Robot rem = new Robot(af,1,2,Direction.EAST);
         
-        
+        // make the rectangular room
         new Wall(af, 0, 0, Direction.NORTH);
         new Wall(af, 0, 0, Direction.WEST);
         new Wall(af, 1, 0, Direction.WEST);
@@ -39,6 +39,33 @@ public class A3Q3 {
         new Wall(af, 0, 3, Direction.NORTH);
         new Wall(af, 0, 4, Direction.NORTH);
         
-        // get direction or if front is Clear and break
+        // make rem move to the side of the room
+        while(rem.frontIsClear()){
+            rem.move();
+        }
+        if(!rem.frontIsClear()){
+            rem.turnLeft();
+            rem.move();
+            rem.turnLeft();
+            rem.turnLeft();
+            rem.turnLeft();
+        }
+        
+        // make rem find his way out of the rectangular room
+        while(!rem.frontIsClear()){
+            rem.turnLeft();
+            if(rem.frontIsClear()){
+                rem.move();
+                rem.turnLeft();
+                rem.turnLeft();
+                rem.turnLeft();
+            }
+            // get rem out of the room
+            if(rem.frontIsClear()){
+                rem.move();
+            }
+        }
+        
+        
     }
 }
