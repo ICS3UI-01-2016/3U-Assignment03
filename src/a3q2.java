@@ -47,17 +47,18 @@ public class a3q2 {
         new Thing(mtl,3,1);
         new Thing(mtl,3,4);
         //algorithm
-        while(!candice.frontIsClear())
-        {
-            candice.turnLeft();
-        }
         while(candice.frontIsClear())
         {
             candice.move();
+            if(candice.canPickThing())
+            {
+                candice.pickThing();
+            }
         }
-        if(candice.canPickThing())
+        if(!candice.frontIsClear())
         {
-            candice.pickThing();
+            candice.turnLeft();
+            candice.turnLeft();
         }
     }
-}
+}//look back at a2q5 for this one and then finish using a2q3
