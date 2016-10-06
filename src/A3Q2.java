@@ -41,34 +41,46 @@ public class A3Q2 {
         new Wall(km, 3, 1, Direction.WEST);
         new Wall(km, 2, 1, Direction.WEST);
         new Wall(km, 1, 1, Direction.WEST);
-        
+
         // place litter on ground for cliff to pick up\
-        new Thing(km,1,2);
-        new Thing(km,2,2);
-        new Thing(km,2,3);
-        new Thing(km,2,4);
-        new Thing(km,3,1);
-        new Thing(km,3,4);
+        new Thing(km, 1, 2);
+        new Thing(km, 2, 2);
+        new Thing(km, 2, 3);
+        new Thing(km, 2, 4);
+        new Thing(km, 3, 1);
+        new Thing(km, 3, 4);
 
         // use while loop to allo cliff to pick up all litter and return to starting position
-        while(cliff.frontIsClear()){
+        while (cliff.frontIsClear()) {
             cliff.move();
-        
-            if(cliff.canPickThing()){
+
+            if (cliff.canPickThing()) {
                 cliff.pickThing();
             }
-        if(!cliff.frontIsClear()){
-            cliff.turnAround();
-        }
-        if(cliff.getAvenue()==1){
-            cliff.turnLeft();
-            cliff.turnLeft();
-            cliff.turnLeft();
-            cliff.move();
-            cliff.turnLeft();
-            
-        }
+            // if robot hits wall then turn around
+            if (!cliff.frontIsClear()) {
+                cliff.turnAround();
+            }
+            // when he gets to avenue 1 make him go down 1 street and begin to clear that street
+            if (cliff.getAvenue() == 1) {
+                cliff.turnRight();
+                if (!cliff.frontIsClear()) {
+                    cliff.turnLeft();
+                    cliff.turnLeft();}
+                cliff.move();
+                cliff.turnLeft();
+                //When he stops at avenue 1 and street 2 facing west, make him go back to original position
+                if (cliff.getDirection() == Direction.WEST) {
+                    cliff.turnRight();
+                    cliff.move();
+                }
+                if (!cliff.frontIsClear()) {
+                    cliff.turnRight();
+                    break;
+                }
+            }
 
         }
+
     }
 }
