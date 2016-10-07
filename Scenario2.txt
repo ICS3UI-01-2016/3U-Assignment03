@@ -1,0 +1,11 @@
+# Window title 
+A3Q1
+# first street, first avenue, num streets, num avenues showing 
+0 0 7 7 
+# intersection size (in pixels) 
+48 
+#Fence 
+becker.robots.Wall 1 5 EAST 
+
+#Thing
+becker.robots.Thing 1 6 
