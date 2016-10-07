@@ -40,7 +40,32 @@ public class A3Q3 {
         new Wall(km, 3, 1, Direction.WEST);
         new Wall(km, 2, 1, Direction.WEST);
         new Wall(km, 1, 1, Direction.WEST);
-                
-                 
+        
+        // create code for cliff to escape the rectangular room 
+        while(cliff.frontIsClear()){
+            cliff.move();
+        }
+        // if in front of cliff there's a wall
+        while(!cliff.frontIsClear()){
+            cliff.turnLeft();
+        }
+         // make cliff check every thing if there are walls 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
