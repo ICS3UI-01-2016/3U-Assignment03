@@ -39,7 +39,7 @@ public class Q1 {
             rick.move();
         } while (rick.frontIsClear() && !rick.canPickThing());
 
-        // program carl (same loop, different robot for stopping at Wall)
+        // program carl (exact same loop, different robot for stopping at Wall)
         do {
             carl.move();
         } while (carl.frontIsClear() && !carl.canPickThing());
