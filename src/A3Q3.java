@@ -46,17 +46,18 @@ public class A3Q3 {
         // get lang to find the wall
         while (lang.frontIsClear()) {
             lang.move();
-            if (!lang.frontIsClear()) {
-                lang.turnLeft();
+        }
+        while (!lang.frontIsClear()) {
+            lang.turnLeft();
+            while (lang.frontIsClear()) {
                 lang.move();
                 lang.turnRight();
-            }
-            if(!lang.frontIsClear()) {
+                if (lang.frontIsClear()) {
+                    lang.move();
+                    break;
+                }
                 lang.turnLeft();
-             
-
             }
-
 
         }
     }
