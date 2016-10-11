@@ -26,24 +26,27 @@ public class A3Q2 {
         new Wall(kw, 3, 1, Direction.SOUTH);
         new Wall(kw, 3, 2, Direction.SOUTH);
         new Wall(kw, 3, 3, Direction.SOUTH);
+        new Wall(kw, 3, 4, Direction.SOUTH);
         new Wall(kw, 1, 1, Direction.WEST);
         new Wall(kw, 2, 1, Direction.WEST);
         new Wall(kw, 3, 1, Direction.WEST);
         new Wall(kw, 1, 1, Direction.NORTH);
         new Wall(kw, 1, 2, Direction.NORTH);
         new Wall(kw, 1, 3, Direction.NORTH);
-        new Wall(kw, 1, 3, Direction.EAST);
-        new Wall(kw, 2, 3, Direction.EAST);
-        new Wall(kw, 3, 3, Direction.EAST);
+        new Wall(kw, 1, 4, Direction.NORTH);
+        new Wall(kw, 1, 4, Direction.EAST);
+        new Wall(kw, 2, 4, Direction.EAST);
+        new Wall(kw, 3, 4, Direction.EAST);
 
         new Thing(kw, 1, 1);
         new Thing(kw, 1, 2);
         new Thing(kw, 2, 2);
         new Thing(kw, 2, 3);
-        new Thing(kw, 3, 2);
+        new Thing(kw, 3, 1);
+        new Thing(kw, 2, 4);
 
 // clean up the box
-        while (karel.frontIsClear()) {
+        while (karel.countThingsInBackpack() <= 5) {
             if (karel.canPickThing()) {
                 karel.pickThing();
             }
@@ -62,6 +65,9 @@ public class A3Q2 {
 
 
             if (!karel.frontIsClear() && karel.getDirection() == Direction.SOUTH) {
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
                 karel.turnLeft();
                 while (karel.frontIsClear()) {
                     karel.move();
@@ -79,6 +85,9 @@ public class A3Q2 {
                 break;
             }
             if (!karel.frontIsClear() && karel.getDirection() == Direction.WEST) {
+                if (karel.canPickThing()) {
+                    karel.pickThing();
+                }
                 karel.turnLeft();
                 if (karel.frontIsClear()) {
                     karel.move();
@@ -87,9 +96,13 @@ public class A3Q2 {
                 karel.move();
             }
 
-
-
         }
-
+        //return to the start
+karel.turnLeft();
+karel.move();
+karel.move();
+karel.turnLeft();
+karel.move();
+karel.turnLeft();
     }
 }
