@@ -8,7 +8,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author manok5757
@@ -21,12 +20,12 @@ public class A3Q3 {
     public static void main(String[] args) {
         // create a city
         City km = new City();
-        
+
         // create Houdini, which is a new robot
-        RobotSE cliff = new RobotSE (km,3,2,Direction.EAST);
-        
+        RobotSE cliff = new RobotSE(km, 3, 2, Direction.EAST);
+
         // create a rectangular room for Houdini to escape
-         new Wall(km, 1, 1, Direction.NORTH);
+        new Wall(km, 1, 1, Direction.NORTH);
         //left an opening
         new Wall(km, 1, 3, Direction.NORTH);
         new Wall(km, 1, 4, Direction.NORTH);
@@ -40,32 +39,39 @@ public class A3Q3 {
         new Wall(km, 3, 1, Direction.WEST);
         new Wall(km, 2, 1, Direction.WEST);
         new Wall(km, 1, 1, Direction.WEST);
-        
+
         // create code for cliff to escape the rectangular room 
-        while(cliff.frontIsClear()){
+        while (cliff.frontIsClear()) {
             cliff.move();
         }
         // if in front of cliff there's a wall
-        while(!cliff.frontIsClear()){
+        while (!cliff.frontIsClear()) {
             cliff.turnLeft();
+
+            // make cliff check every wall to see if there is a possible exit
+            while (cliff.frontIsClear()) {
+                cliff.move();
+                cliff.turnRight();
+                if (cliff.frontIsClear()) {
+                    cliff.move();
+                    break;
+                }
+            }
         }
-         // make cliff check every thing if there are walls 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
