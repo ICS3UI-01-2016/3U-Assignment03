@@ -49,22 +49,74 @@ public class A3Q2 {
             ben.move();
             if (ben.canPickThing()){
                 ben.pickThing();
-                if(!ben.frontIsClear()){
+            }
+            if (!ben.frontIsClear() && ben.getDirection() == Direction.EAST){
+                ben.turnLeft();
+                ben.turnLeft();
+            }
+            if (!ben.frontIsClear() && ben.getDirection() == Direction.WEST){
+                ben.turnLeft();
+                if (ben.frontIsClear()){
+                    ben.move();
                     ben.turnLeft();
                 }
+                while (!ben.frontIsClear()){
+                    ben.turnLeft();
+                    ben.turnLeft();
+                    ben.move();
+                    }
+                if (!ben.frontIsClear()){
+                
+                
+                    
                 }
+
+                        }
+                        
+
+
+                    }
+
+
+
+                    
+
+
+                    }
+
+                    }
+
+                    
+                    
+
+            
+            
+               
+ 
+            
+    
+
+
+
+
+
+            
+            
+                
+                
+                
         
        
             
                 
                 
 
-        }
+        
                  
 
                     
-                    }
-            }
+                    
+            
         
 
 
