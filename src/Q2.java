@@ -49,37 +49,16 @@ public class Q2 {
         new Thing(q2, 3, 1);
         new Thing(q2, 3, 4);
 
-        // Find furthest street
+        // START AT BOTTOM OF ROOM:
+        // Find furthest steet
         rick.turnRight();
         do {
             rick.move();
         } while (rick.frontIsClear());
-        // Furthest street found, turn to face it
-        rick.turnAround();
+        // Furthest street found, face north
+        rick.turnLeft();
 
-        // MAIN WHILE LOOP
-        while (rick.frontIsClear()) {
-            rick.turnRight();
-            // Move along street
-            while (rick.frontIsClear()) {
-                rick.move();
-                // Pick up any litter
-                if (rick.canPickThing()) {
-                    rick.pickThing();
-                }
-                // At end of street, face other way
-                if (!rick.frontIsClear()) {
-                    rick.turnAround();
-                    // Move to first avenue
-                    do {
-                        rick.move();
-                    } while (rick.getAvenue() != 1);
-                    // If litter on street intersects avenue 1, pick it up
-                    if (rick.canPickThing()) {
-                        rick.pickThing();
-                    }
-                }
-            }
-        }
+        // CLEANING ROOM LOOP:
+
     }
 }
