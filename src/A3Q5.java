@@ -37,13 +37,17 @@ public class A3Q5 {
         new Thing (kw,1,2);
         new Thing (kw,1,2);
         // get lang to pick up things
-        if(lang.canPickThing()){
-            lang.pickAllThings();
+        
+        for(int i = 0; i < 10; i = i + 1){
+        lang.pickThing();
+        lang.move();
+        lang.putThing();
+        lang.turnAround();
+        lang.move();
+        lang.turnAround();
         }
-        if(!lang.canPickThing()){
-            lang.move();
-            lang.putAllThings();
-        }
+        lang.move();
+        
     
     }
 }
