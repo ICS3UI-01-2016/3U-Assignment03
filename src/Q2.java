@@ -59,6 +59,18 @@ public class Q2 {
         rick.turnLeft();
 
         // CLEANING ROOM LOOP:
-
+        while(rick.getAvenue() ==1 && rick.getStreet() !=1){
+            rick.move();
+            break;
+        }
+        // Main condition
+        // if ... (end)
+        // }else{
+            // Move along street
+                // Pick any litter
+                // End of street; turn around
+                // Return to Avenue 1
+                // Pick any litter on avenue
+                // Face north
     }
 }
