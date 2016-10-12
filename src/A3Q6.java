@@ -19,6 +19,7 @@ public class A3Q6 {
      */
     public static void main(String[] args) {
         int loop = 0;
+        int looped = 0;
         //basic startup for a single robot
         City kw = new City();
         Robot karel = new Robot(kw, 3, 3, Direction.SOUTH);
@@ -56,9 +57,24 @@ public class A3Q6 {
         new Wall(kw, 4, 4, Direction.WEST);
         new Wall(kw, 4, 5, Direction.EAST);
 
-
-        while (loop < 1) {
-            
+//patrol in a pattern
+        while (loop < 3) {
+            karel.move();
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+            loop = loop + 1;
+            while (loop >= 3 && loop < 6) {
+                loop = loop + 1;
+                karel.move();
+            }
+            if (loop == 6) {
+                loop = 0;
+                looped = looped + 1;
+            }
+            if (looped == 4) {
+                break;
+            }
         }
     }
 }
