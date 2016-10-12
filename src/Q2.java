@@ -55,41 +55,31 @@ public class Q2 {
             rick.move();
         } while (rick.frontIsClear());
         // Furthest street found, turn to face it
-        rick.turnLeft();
-        // Move along street
-        while(rick.frontIsClear()){
-            rick.move();
-            // Pick up any litter
-            if (rick.canPickThing()){
-                rick.pickThing();
+        rick.turnAround();
+
+        // MAIN WHILE LOOP
+        while (rick.frontIsClear()) {
+            rick.turnRight();
+            // Move along street
+            while (rick.frontIsClear()) {
+                rick.move();
+                // Pick up any litter
+                if (rick.canPickThing()) {
+                    rick.pickThing();
+                }
+                // At end of street, face other way
+                if (!rick.frontIsClear()) {
+                    rick.turnAround();
+                    // Move to first avenue
+                    do {
+                        rick.move();
+                    } while (rick.getAvenue() != 1);
+                    // If litter on street intersects avenue 1, pick it up
+                    if (rick.canPickThing()) {
+                        rick.pickThing();
+                    }
+                }
             }
-            // At end of street
         }
-            
-
-
-
-       
-        // end of street, turn around and go back to first avenue
-        //if (!rick.frontIsClear()){
-        //rick.turnAround();
-        //do{
-        //rick.move();
-        //}while(rick.getAvenue()!=1);
-        // pick litter at start of street, if possible
-        //if(rick.canPickThing()){
-        //rick.pickThing();
-        //}
-        // move to face the street above
-        // while(rick.getStreet()!=1){
-        //rick.turnRight();
-        //rick.move();
-        //rick.turnRight();
-        //}
-        //}
-        // }
-
-
-
     }
 }
