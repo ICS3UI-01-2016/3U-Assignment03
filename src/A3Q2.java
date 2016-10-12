@@ -66,7 +66,8 @@ public class A3Q2 {
                 cliff.turnRight();
                 if (!cliff.frontIsClear()) {
                     cliff.turnLeft();
-                    cliff.turnLeft();}
+                    cliff.turnLeft();
+                }
                 cliff.move();
                 cliff.turnLeft();
                 //When he stops at avenue 1 and street 2 facing west, make him go back to original position

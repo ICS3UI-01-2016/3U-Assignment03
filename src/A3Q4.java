@@ -45,7 +45,7 @@ public class A3Q4 {
             cliff.turnLeft();
             cliff.move();
 
-           
+
 
 
         }
