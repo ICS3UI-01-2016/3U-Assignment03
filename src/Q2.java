@@ -60,8 +60,9 @@ public class Q2 {
 
         // CLEANING ROOM LOOP:
         while(rick.getAvenue() ==1 && rick.getStreet() !=1){
-            rick.move();
-            break;
+           if(rick.canPickThing()) {
+               rick.pickThing();
+           }
         }
         // Main condition
         // if ... (end)
