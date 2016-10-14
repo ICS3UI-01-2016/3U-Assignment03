@@ -64,27 +64,38 @@ public class A3Q2 {
                     ben.turnLeft();
                     ben.turnLeft();
                     ben.move();
+                    break;
+                }
+
+                        
                     }
-                if (!ben.frontIsClear()){
+                }
+
+  
+                        
+                    } 
                 
                 
                     
                 }
 
-                        }
+                        
+
                         
 
 
-                    }
+                    
 
 
 
                     
 
 
-                    }
+                    
 
-                    }
+                    
+
+
 
                     
                     

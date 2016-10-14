@@ -45,6 +45,7 @@ public class A3Q5 {
             ben.move();
             ben.turnLeft();
             ben.turnLeft();
+            }
             if(!ben.canPickThing()){
                 break;
             }
