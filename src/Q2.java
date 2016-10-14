@@ -56,22 +56,66 @@ public class Q2 {
             rick.move();
         } while (rick.frontIsClear());
         // Furthest street found, face north
-        rick.turnLeft();
+        rick.turnAround();
 
-        // CLEANING ROOM LOOP:
-        while(rick.getAvenue() ==1 && rick.getStreet() !=1){
-           if(rick.canPickThing()) {
-               rick.pickThing();
-           }
-        }
-        // Main condition
-        // if ... (end)
-        // }else{
+        // MAIN LOOP:
+        // If there is no wall in front of him on the avenue
+        while (rick.frontIsClear()) {
+            // Turn to face street
+            rick.turnRight();
+            // CLEANING ROOM LOOP
             // Move along street
+            while (rick.frontIsClear()) {
+                rick.move();
                 // Pick any litter
+                if (rick.canPickThing()) {
+                    rick.pickThing();
+                }
                 // End of street; turn around
-                // Return to Avenue 1
-                // Pick any litter on avenue
-                // Face north
+                if (!rick.frontIsClear()) {
+                    rick.turnAround();
+                    // Return to Avenue 1
+                    do {
+                        rick.move();
+                    } while (rick.getAvenue() != 1);
+                    // Pick any litter on avenue
+                    if (rick.canPickThing()) {
+                        rick.pickThing();
+                    }
+                    // Face north
+                    rick.turnRight();
+                    // Move up for new street
+                    rick.move();
+                }
+                // Break cleaning room loop, move back to top of main loop
+                if (rick.getAvenue() == 1) {
+                    break;
+                }
+            }
+        }
+
+        // CLEANING STREET 1 LOOP
+        for (int cleanStreet = 0; cleanStreet < 1; cleanStreet = cleanStreet + 1) {
+            // Face street
+            rick.turnRight();
+            // Move along street
+            while (rick.frontIsClear()) {
+                rick.move();
+                // Pick any litter
+                if (rick.canPickThing()) {
+                    rick.pickThing();
+                }
+                // End of street; turn around
+                if (!rick.frontIsClear()) {
+                    rick.turnAround();
+                    // Return to Avenue 1
+                    do {
+                        rick.move();
+                    } while (rick.getAvenue() != 1);
+                }
+            }
+            rick.turnAround();
+        }
+
     }
 }
