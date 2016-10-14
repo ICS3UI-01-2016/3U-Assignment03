@@ -57,16 +57,26 @@ public class A3Q2 {
             }
             if (!tom.frontIsClear() && tom.getDirection() == Direction.WEST) {
                 tom.turnLeft();
-                tom.move();
-                tom.turnLeft();
-                if (tom.countThingsInBackpack()== 6){
-                    break;
-             
-                         
-                    
-                }
+                if (tom.frontIsClear()) {
+                    tom.move();
+                    tom.turnLeft();
+                } 
+
             }
         }
+        
+            while(!tom.frontIsClear()){
+                   tom.turnLeft();
+                   tom.turnLeft();
+                   tom.move();
+                   tom.move();
+                   tom.turnLeft();
+                   tom.turnLeft();
+                   tom.turnLeft();
+                   break;
+                   
+            }
+        
+        
     }
 }
-

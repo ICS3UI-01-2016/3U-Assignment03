@@ -1,6 +1,7 @@
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.IPredicate;
 import becker.robots.Robot;
 import becker.robots.Wall;
 
@@ -20,7 +21,7 @@ public class A3Q3 {
     public static void main(String[] args) {
         // Create a City for robot
         City jk = new City();
-        Robot bob = new Robot(jk, 5, 2, Direction.SOUTH);
+        Robot bob = new Robot(jk, 4, 3, Direction.SOUTH);
         //Create Walls
         new Wall(jk, 4, 1, Direction.WEST);
         new Wall(jk, 4, 1, Direction.NORTH);
@@ -38,26 +39,37 @@ public class A3Q3 {
         new Wall(jk, 4, 3, Direction.NORTH);
         new Wall(jk, 4, 4, Direction.NORTH);
 
+
+        //while loop with condition{
         while (bob.frontIsClear()) {
             bob.move();
         }
 
-        while (!bob.frontIsClear()) {
-            bob.turnLeft();
-            bob.move();
-            bob.turnLeft();
-            bob.turnLeft();
-            bob.turnLeft();
-            
-            
-        
-    
-}
+
+        while (true) {
+            while (!bob.frontIsClear()) {
+                bob.turnLeft();
+                bob.move();
+
+            }
+            if (bob.frontIsClear()) {
+                bob.move();
+
+                if (!bob.frontIsClear()) {
+                    bob.turnLeft();
+                }
+            }
+
+            if (!bob.isBesideThing(IPredicate.aWall)) {
+                bob.turnLeft();
+                bob.turnLeft();
+                bob.turnLeft();
+                bob.move();
+                break;
+            }
 
 
+        }
 
     }
-
-
-
-
+}
