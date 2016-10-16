@@ -31,13 +31,13 @@ public class Q4 {
         new Wall(q4, 2, 2, Direction.SOUTH);
         new Wall(q4, 1, 1, Direction.WEST);
         new Wall(q4, 2, 1, Direction.WEST);
-        
+
         // Create robot
-        RobotSE rick = new RobotSE(q4,0,2,Direction.WEST);
-        
+        RobotSE rick = new RobotSE(q4, 0, 2, Direction.WEST);
+
         // FOR LOOP
         // sides = 1 side around square, for 8 sides
-        for(int sides = 0; sides < 8; sides = sides + 1){
+        for (int sides = 0; sides < 8; sides = sides + 1) {
             rick.move();
             rick.move();
             rick.turnLeft();
