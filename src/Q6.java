@@ -62,34 +62,22 @@ public class Q6 {
         // Create robot
         RobotSE rick = new RobotSE(q6, 3, 3, Direction.SOUTH);
 
-        // RED PATH
-        // movesRed = move 1 side around the bottom right square
-        for (int movesRed = 0; movesRed < 3; movesRed = movesRed + 1) {
-            rick.move();
-            rick.move();
-            rick.move();
-            rick.turnLeft();
-        }
-
-        // ORANGE, PINK, & YELLOW PATHS
-        // Loop 3 times, once for each coloured path
-        for (int paths = 0; paths < 3; paths = paths + 1) {
-            // Move to intersection 3,3
-            if (rick.getStreet() != 3 && rick.getAvenue() != 3) {
-                do {
-                    rick.move();
-                } while (rick.getStreet() != 3 && rick.getAvenue() != 3);
-            break;
-            } 
-            if (rick.getStreet()==3 && rick.getAvenue()==3){
-                // Move around sqaure 3 times
-                for (int moves = 0; moves < 3; moves = moves + 1) {
-                    rick.move();
-                    rick.move();
-                    rick.move();
-                    rick.turnLeft();
+        // Loop once for each square
+        for(int squares = 0; squares < 4; squares = squares + 1){
+            // Move for 4 blocks (around square)
+            for(int blocks = 0; blocks < 4; blocks = blocks + 1){
+                // Move three times
+                rick.move();
+                rick.move();
+                rick.move();
+                // Turn left
+                rick.turnLeft();
+                // if at checkpoint (intersection 3,3), go back to top of loop
+                if (rick.getStreet()==3 && rick.getAvenue()==3){
+                    
                 }
             }
         }
+            
     }
 }
