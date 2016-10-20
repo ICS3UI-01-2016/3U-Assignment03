@@ -47,6 +47,30 @@ public class a3q2 {
         new Thing(mtl,3,1);
         new Thing(mtl,3,4);
         //algorithm
+        /*while(candice.frontIsClear())
+        {
+            candice.move();
+        
+            if(candice.canPickThing())
+            {
+                candice.pickThing();
+            }
+            if(!candice.frontIsClear())
+            {
+            candice.turnLeft();
+            candice.turnLeft();
+            }
+            else{
+                candice.move();
+            }
+        }
+        while(!candice.frontIsClear())
+        {
+            candice.turnLeft();
+            candice.move();
+        }
+        
+        */
         while(candice.frontIsClear())
         {
             candice.move();
@@ -54,11 +78,18 @@ public class a3q2 {
             {
                 candice.pickThing();
             }
-        }
-        if(!candice.frontIsClear())
-        {
-            candice.turnLeft();
-            candice.turnLeft();
+            if(candice.frontIsClear())
+            {
+                    candice.turnLeft();
+                    candice.turnLeft();
+                    candice.move();
+                    if(!candice.frontIsClear())
+                    {
+                        candice.turnLeft();
+                        candice.move();
+                        candice.turnLeft();
+                    }
+            }
         }
     }
 }//look back at a2q5 for this one and then finish using a2q3

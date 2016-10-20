@@ -32,6 +32,54 @@ public class a3q4 {
         new Wall(mtl, 1, 2, Direction.EAST);
         new Wall(mtl, 1, 1, Direction.NORTH);
         new Wall(mtl, 1, 2, Direction.NORTH);
-        //
+        //create a loop
+        //get robot to check for wal on left
+        candice.turnLeft();
+        while(!candice.frontIsClear())
+        {
+            candice.turnLeft();
+            candice.turnLeft();
+            candice.turnLeft();
+            candice.move();
+            candice.move();
+            while(candice.frontIsClear())
+            {
+                candice.turnLeft();
+                candice.move();
+                if(candice.frontIsClear())
+                {
+                    candice.move();
+                    candice.move();
+                }
+                
+            }
+            
+        }
+        /*while(1==1)
+        {
+            
+        if(!candice.frontIsClear())
+        {
+            candice.turnLeft();
+            candice.turnLeft();
+            candice.turnLeft();
+            if(candice.frontIsClear())
+            {
+                candice.move();
+                candice.move();
+                while(candice.frontIsClear())
+                {
+                    candice.turnLeft();
+                }
+                while(candice.frontIsClear())
+                {
+                candice.move();
+                }
+            }
+        }
+                /*
+            
+            */
+        }
     }
-}
+
