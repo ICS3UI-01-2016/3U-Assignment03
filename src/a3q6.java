@@ -8,7 +8,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author woodc9217
@@ -59,5 +58,17 @@ public class a3q6 {
         new Wall(mtl, 5, 4, Direction.WEST);
         new Wall(mtl, 4, 5, Direction.EAST);
         new Wall(mtl, 5, 5, Direction.EAST);
+
+        //create a for loop for all squares
+        for (int outside = 0; outside < 4; outside++) {
+            for (int inside = 0; inside < 4; inside++) {//do one square
+                candice.move();
+                candice.move();
+                candice.move();
+                candice.turnLeft();
+            }
+            candice.turnLeft();//turn to face next block
+
+        }
     }
 }

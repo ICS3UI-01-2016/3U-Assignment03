@@ -21,7 +21,7 @@ public class a3q3 {
         //create a new city
         City mtl = new City();
         //create a robot
-        Robot candice = new Robot(mtl, 1, 1, Direction.SOUTH);
+        Robot candice = new Robot(mtl, 2, 2, Direction.SOUTH);
         //create walls
         new Wall(mtl, 1, 1, Direction.WEST);
         new Wall(mtl, 2, 1, Direction.WEST);
@@ -36,18 +36,7 @@ public class a3q3 {
         new Wall(mtl, 1, 1, Direction.NORTH);
         new Wall(mtl, 1, 3, Direction.NORTH);
         new Wall(mtl, 1, 4, Direction.NORTH);
-        //instruct robot to stay next to the walls
-            /*
-         while(candice.frontIsClear())
-         {
-         candice.move();
-         while(!candice.frontIsClear())
-         {
-         candice.turnLeft();
-         }
-         }
-         */
-        //make Houdini face wall
+        //make Houdini a face wall
         candice.turnLeft();
         candice.turnLeft();
         candice.turnLeft();
@@ -58,7 +47,9 @@ public class a3q3 {
         //if there is a wall in front
         while (!candice.frontIsClear()) {
             candice.turnLeft();
-            candice.move();
+            if (candice.frontIsClear()) {
+                candice.move();
+            }
             //if there's no wall in front
             if (candice.frontIsClear()) {
                 candice.turnLeft();
@@ -72,4 +63,3 @@ public class a3q3 {
         }
     }
 }
-//EVERYTHING WORKS UNTIL YOU PLACE THE ROBOT IN (3,?) try is beside thing

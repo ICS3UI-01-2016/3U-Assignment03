@@ -8,7 +8,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author woodc9217
@@ -22,7 +21,7 @@ public class a3q4 {
         //create a new city
         City mtl = new City();
         //create a robot
-        Robot candice = new Robot(mtl, 0, 2, Direction.WEST);
+        Robot candice = new Robot(mtl, 0, 3, Direction.WEST);
         //create walls
         new Wall(mtl, 1, 1, Direction.WEST);
         new Wall(mtl, 2, 1, Direction.WEST);
@@ -32,54 +31,12 @@ public class a3q4 {
         new Wall(mtl, 1, 2, Direction.EAST);
         new Wall(mtl, 1, 1, Direction.NORTH);
         new Wall(mtl, 1, 2, Direction.NORTH);
-        //create a loop
-        //get robot to check for wal on left
-        candice.turnLeft();
-        while(!candice.frontIsClear())
-        {
-            candice.turnLeft();
-            candice.turnLeft();
-            candice.turnLeft();
+        //create a for loop so that the robot repeats the side code 4 times 
+        for (int i = 0; i < 8; i++) {
             candice.move();
             candice.move();
-            while(candice.frontIsClear())
-            {
-                candice.turnLeft();
-                candice.move();
-                if(candice.frontIsClear())
-                {
-                    candice.move();
-                    candice.move();
-                }
-                
-            }
-            
-        }
-        /*while(1==1)
-        {
-            
-        if(!candice.frontIsClear())
-        {
+            candice.move();
             candice.turnLeft();
-            candice.turnLeft();
-            candice.turnLeft();
-            if(candice.frontIsClear())
-            {
-                candice.move();
-                candice.move();
-                while(candice.frontIsClear())
-                {
-                    candice.turnLeft();
-                }
-                while(candice.frontIsClear())
-                {
-                candice.move();
-                }
-            }
-        }
-                /*
-            
-            */
         }
     }
-
+}
