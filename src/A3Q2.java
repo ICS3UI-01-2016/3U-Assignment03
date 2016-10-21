@@ -51,42 +51,41 @@ public class A3Q2 {
          new Thing(kpl,2,2);
          
          // make obama pick up all th litter in the room
-         while(obama.frontIsClear()){
-             obama.move();
-             
-             //get robot to pick up things
-             if(obama.canPickThing()){
+        while (obama.frontIsClear()) {
+               obama.move();
+ 
+             //if there is a thing, pick it up
+             if (obama.canPickThing()) {
                  obama.pickThing();
              }
-             //when front is not clear, make obama turn around
-             if(!obama.frontIsClear()){
+             //if the front is not clear, turn around
+             if (!obama.frontIsClear()) {
                  obama.turnAround();
              }
-                 //get him to turn right and move when he reaches avenue 1
-                 if(obama.getAvenue()== 1){
-                     obama.turnRight();
-                     obama.move(); 
+             //if obama is on avenue 1, turn right
+             if (obama.getAvenue() == 1) {
+                 obama.turnRight();
+                 
+                 //if the front is not clear then, turn left twice
+                 if (!obama.frontIsClear()) {
                      obama.turnLeft();
-                     if(obama.canPickThing()){
-                         obama.pickThing();
-                     }
-                     
+                     obama.turnLeft();
+                 }
+                 //move and turn left
+                 obama.move();
+                 obama.turnLeft();
+
+                 //if obama is facing West, turn right and move
+                 if (obama.getDirection() == Direction.WEST) {
+                     obama.turnRight();
+                     obama.move();
+                 }
+                 //if the front is not clear again, turn right and end loop
+                 if (!obama.frontIsClear()) {
+                     obama.turnRight();
+                     break;
                  }
              }
-         
-         
-             
-         
-         
-             
-            
-        
-        
-        
-        
-        
-        
-        
-                 
+         }            
     }
 }
