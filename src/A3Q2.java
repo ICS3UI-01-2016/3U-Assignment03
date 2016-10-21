@@ -61,7 +61,7 @@ public class A3Q2 {
              //when front is not clear, make obama turn around
              if(!obama.frontIsClear()){
                  obama.turnAround();
-                 
+             }
                  //get him to turn right and move when he reaches avenue 1
                  if(obama.getAvenue()== 1){
                      obama.turnRight();
@@ -70,21 +70,14 @@ public class A3Q2 {
                      if(obama.canPickThing()){
                          obama.pickThing();
                      }
+                     
                  }
-                 
-                 //get obama to his starting position
-                 if(!obama.frontIsClear()){
-                   while(obama.getStreet()== 1){
-                    if(obama.getDirection()== Direction.SOUTH)
-                     obama.turnAround();   
-                   }
-                   while(obama.getAvenue()== 1){
-                    if(obama.getDirection()== Direction.EAST)
-                     obama.turnLeft();
-                      break; 
-                 }
-               }  
-         }
+             }
+         
+         
+             
+         
+         
              
             
         
@@ -94,6 +87,6 @@ public class A3Q2 {
         
         
         
-         }        
+                 
     }
 }

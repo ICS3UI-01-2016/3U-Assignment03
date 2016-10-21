@@ -27,7 +27,8 @@ public class A3Q1 {
         Robot obama = new Robot(kpl,1,1,Direction.EAST); 
         
         //create a wall 
-        new Wall(kpl,1,5,Direction.EAST); 
+        new Wall(kpl,1,5,Direction.EAST);
+        
          //place a thing
         new Thing(kpl,1,6); 
         
