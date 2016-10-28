@@ -36,10 +36,10 @@ public class A3Q5 {
         new Thing(mc, 1, 1);
         new Thing(mc, 1, 1);
 
-        //pick up things and place them 
+        //counter variable
         int count = 0;
         //go until there are 0 things left
-        while (count > 10) 
+        while (count < 10) 
             break;
 
             bul.pickThing();
