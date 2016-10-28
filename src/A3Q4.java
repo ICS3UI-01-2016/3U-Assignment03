@@ -35,7 +35,7 @@ public class A3Q4 {
 
 
             
-
+            // Get the robot jet to move around the perimeter of the sqaure 8 times using a counter 
             for(int count = 0; count < 8; count = count + 1){
                 jef.move();
                 jef.move();

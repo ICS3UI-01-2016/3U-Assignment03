@@ -60,7 +60,7 @@ public class A3Q6 {
 
         //get the robot to move around the perimeter and repeat for the next three blocks
         for (int l = 0; l < 4; l = l + 1) {
-
+        
             for (int i = 0; i < 3; i = i + 1) {
                 bob.move();
                 bob.move();

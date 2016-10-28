@@ -21,7 +21,7 @@ public class A3Q3 {
     public static void main(String[] args) {
         // Create a City for robot
         City jk = new City();
-        Robot bob = new Robot(jk, 4, 3, Direction.SOUTH);
+        Robot bob = new Robot(jk, 5, 1, Direction.NORTH);
         //Create Walls
         new Wall(jk, 4, 1, Direction.WEST);
         new Wall(jk, 4, 1, Direction.NORTH);
@@ -41,6 +41,11 @@ public class A3Q3 {
 
 
         //while loop with condition{
+        while (bob.getDirection() == Direction.SOUTH) {
+                bob.turnLeft();
+                bob.turnLeft();
+            }
+        
         while (bob.frontIsClear()) {
             bob.move();
         }
